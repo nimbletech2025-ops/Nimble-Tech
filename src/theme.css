@@ -1,0 +1,69 @@
+/* ===============================
+   Nimble Tech – Brand Theme
+   =============================== */
+@theme {
+  /* Golden Bronze */
+  --color-golden-bronze-50: #fbf5ea;
+  --color-golden-bronze-100: #f6ebd5;
+  --color-golden-bronze-200: #edd7ab;
+  --color-golden-bronze-300: #e4c381;
+  --color-golden-bronze-400: #dbaf57;
+  --color-golden-bronze-500: #d29b2d;
+  --color-golden-bronze-600: #a87c24;
+  --color-golden-bronze-700: #7e5d1b;
+  --color-golden-bronze-800: #543e12;
+  --color-golden-bronze-900: #2a1f09;
+  --color-golden-bronze-950: #1d1606;
+
+  /* Amber Glow */
+  --color-amber-glow-50: #fff5e6;
+  --color-amber-glow-100: #feeacd;
+  --color-amber-glow-200: #fdd69b;
+  --color-amber-glow-300: #fdc168;
+  --color-amber-glow-400: #fcad36;
+  --color-amber-glow-500: #fb9804;
+  --color-amber-glow-600: #c97a03;
+  --color-amber-glow-700: #975b02;
+  --color-amber-glow-800: #643d02;
+  --color-amber-glow-900: #321e01;
+  --color-amber-glow-950: #231501;
+
+  /* Blue Bell */
+  --color-blue-bell-50: #e7f6fe;
+  --color-blue-bell-100: #cfecfc;
+  --color-blue-bell-200: #9edafa;
+  --color-blue-bell-300: #6ec7f7;
+  --color-blue-bell-400: #3db5f5;
+  --color-blue-bell-500: #0da2f2;
+  --color-blue-bell-600: #0a82c2;
+  --color-blue-bell-700: #086191;
+  --color-blue-bell-800: #054161;
+  --color-blue-bell-900: #032030;
+  --color-blue-bell-950: #021722;
+
+  /* Sky Blue Light */
+  --color-sky-blue-light-50: #e7f8fe;
+  --color-sky-blue-light-100: #cff2fc;
+  --color-sky-blue-light-200: #9fe4f9;
+  --color-sky-blue-light-300: #6ed7f7;
+  --color-sky-blue-light-400: #3ec9f4;
+  --color-sky-blue-light-500: #0ebcf1;
+  --color-sky-blue-light-600: #0b96c1;
+  --color-sky-blue-light-700: #087191;
+  --color-sky-blue-light-800: #064b60;
+  --color-sky-blue-light-900: #032630;
+  --color-sky-blue-light-950: #021a22;
+
+  /* Prussian Blue */
+  --color-prussian-blue-50: #e8eefd;
+  --color-prussian-blue-100: #d1defa;
+  --color-prussian-blue-200: #a3bdf5;
+  --color-prussian-blue-300: #759cf0;
+  --color-prussian-blue-400: #467bec;
+  --color-prussian-blue-500: #185ae7;
+  --color-prussian-blue-600: #1348b9;
+  --color-prussian-blue-700: #0f368a;
+  --color-prussian-blue-800: #0a245c;
+  --color-prussian-blue-900: #05122e;
+  --color-prussian-blue-950: #030d20;
+}

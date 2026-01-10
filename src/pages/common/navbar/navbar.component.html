@@ -1,0 +1,57 @@
+<nav
+  class="fixed bottom-0 left-0 right-0 z-50 py-2 px-3 sm:px-4 md:px-6 bg-gradient-to-br from-[var(--color-prussian-blue-950)] via-[var(--color-prussian-blue-800)] to-[var(--color-prussian-blue-900)] border-t-2 border-[var(--color-golden-bronze-500)] shadow-[0_-4px_12px_rgba(0,0,0,0.3),0_-2px_4px_rgba(210,155,45,0.2)] backdrop-blur-sm"
+>
+  <div
+    class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3 md:gap-6"
+  >
+    <!-- First Row on Small Screens: Logo + Social Icons -->
+    <div class="flex items-center justify-between w-full sm:w-auto gap-3 sm:gap-0">
+      <!-- Logo -->
+      <div class="shrink-0">
+        <a href="/" class="flex items-center">
+          <img
+            src="/logo-nimble-tech-nobg.png"
+            alt="Nimble Tech Logo"
+            class="h-8 sm:h-10 md:h-12 lg:h-12 w-auto object-contain max-w-[120px] sm:max-w-[140px] md:max-w-[160px]"
+          />
+        </a>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="flex items-center gap-2 sm:gap-2.5 md:gap-3 lg:gap-4 shrink-0">
+        @for (social of socialLinks; track social.name) {
+        <a
+          [href]="social.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+          aria-label="{{ social.name }}"
+        >
+          <i-lucide [img]="social.icon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5"></i-lucide>
+        </a>
+        }
+      </div>
+    </div>
+
+    <!-- Divider - Only visible on small screens -->
+    <div class="w-full h-px bg-[var(--color-golden-bronze-500)] opacity-30 sm:hidden my-1"></div>
+
+    <!-- Navigation Tabs - Second Row on Small Screens, End on Large Screens -->
+    <div
+      class="flex items-center gap-1 sm:gap-2 md:gap-3 flex-wrap justify-center sm:justify-end w-full sm:w-auto"
+    >
+      @for (tab of tabs; track tab.name) {
+      <a
+        (click)="navigateTo(tab.path)"
+        class="nav-link px-1 sm:px-3 cursor-pointer md:px-4 py-1.5 sm:py-2 rounded-lg font-medium text-[10px] sm:text-xs md:text-sm transition-all duration-300 flex items-center gap-1 sm:gap-1.5 md:gap-2"
+      >
+        <i-lucide
+          [img]="tab.icon"
+          class="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4 md:h-4 shrink-0"
+        ></i-lucide>
+        <span class="nav-link-text">{{ tab.name }}</span>
+      </a>
+      }
+    </div>
+  </div>
+</nav>

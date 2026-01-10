@@ -1,0 +1,44 @@
+/* Minimal CSS for hover effects with theme colors */
+.nav-link {
+  color: var(--color-sky-blue-light-100);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link:hover {
+  color: var(--color-golden-bronze-300);
+  transform: translateY(-1px);
+}
+
+.social-link {
+  color: var(--color-sky-blue-light-200);
+}
+
+.social-link:hover {
+  color: var(--color-golden-bronze-400);
+  background-color: rgba(210, 155, 45, 0.15);
+}
+
+/* Enhanced responsive styles for very small screens */
+@media (max-width: 475px) {
+  .nav-link {
+    padding: 0.375rem 0.5rem;
+  }
+}
+
+/* Show text on small screens and up */
+.nav-link-text {
+  display: inline;
+}
+
+/* Extra small screens - show icons only */
+@media (max-width: 360px) {
+  .nav-link-text {
+    display: none;
+  }
+
+  .nav-link {
+    padding: 0.5rem;
+    min-width: 2.5rem;
+    justify-content: center;
+  }
+}
