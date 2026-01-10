@@ -1,0 +1,63 @@
+<section class="w-full">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center pt-8 pb-6">
+      <p
+        class="text-base sm:text-lg mb-4 font-normal"
+        style="color: var(--color-golden-bronze-600)"
+      >
+        Powering Performance & Reliability
+      </p>
+
+      <h2 class="text-3xl sm:text-4xl font-bold text-black mb-4 uppercase tracking-wider">
+        HARDWARE SOLUTIONS
+      </h2>
+
+      <p
+        class="text-sm sm:text-base text-sky-blue-light-700 max-w-2xl mx-auto font-normal leading-relaxed"
+      >
+        Explore high-quality computer components and hardware solutions designed for performance,
+        durability, and modern computing needs.
+      </p>
+    </div>
+
+    <!-- Products Swiper -->
+    <swiper-container
+      class="products-swiper"
+      slides-per-view="1"
+      space-between="20"
+      loop="true"
+      navigation="false"
+      pagination='{"clickable": true, "dynamicBullets": true}'
+      autoplay='{"delay": 3000, "disableOnInteraction": false}'
+      breakpoints='{"640": {"slidesPerView": 1, "spaceBetween": 20}, "768": {"slidesPerView": 3, "spaceBetween": 20}, "1024": {"slidesPerView": 5, "spaceBetween": 20}}'
+    >
+      @for (product of products; track product.id) {
+      <swiper-slide>
+        <div
+          class="product-card h-full flex flex-col bg-sky-blue-light-500/80 cursor-pointer transition-all duration-300 hover:scale-105 rounded-xl"
+        >
+          <!-- Product Image Panel -->
+          <div
+            class="relative w-full flex-1 min-h-[200px] sm:min-h-[250px] md:min-h-[300px] overflow-hidden"
+          >
+            <img
+              [src]="product.image"
+              [alt]="product.name"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+
+          <!-- Category Label -->
+          <div class="w-full py-3 sm:py-4 text-center rounded-b-xl">
+            <span class="text-black/80 font-bold text-base md:text-md uppercase tracking-wider">
+              {{ product.category }}
+            </span>
+          </div>
+        </div>
+      </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+</section>
