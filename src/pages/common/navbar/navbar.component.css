@@ -1,7 +1,19 @@
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
 /* Minimal CSS for hover effects with theme colors */
 .nav-link {
   color: var(--color-sky-blue-light-100);
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex-shrink: 0; /* Prevent tabs from shrinking */
+  min-width: fit-content; /* Ensure tabs don't get cut off */
 }
 
 .nav-link:hover {
@@ -32,9 +44,9 @@
 
 /* Extra small screens - show icons only */
 @media (max-width: 360px) {
-  .nav-link-text {
+  /* .nav-link-text {
     display: none;
-  }
+  } */
 
   .nav-link {
     padding: 0.5rem;
