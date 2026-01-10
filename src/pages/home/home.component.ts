@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroSectionComponent } from './hero-section/hero-section.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  imports: [HeroSectionComponent],
 })
 export class HomeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

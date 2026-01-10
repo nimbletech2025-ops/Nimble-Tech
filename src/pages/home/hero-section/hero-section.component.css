@@ -1,0 +1,69 @@
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Swiper Customization */
+swiper-container {
+  --swiper-pagination-color: var(--color-golden-bronze-500);
+  --swiper-navigation-color: var(--color-golden-bronze-500);
+  --swiper-navigation-size: 24px;
+  height: 100%;
+  width: 100%;
+}
+
+swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Ensure images display fully without being cut */
+section img {
+  object-fit: fill;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Custom pagination bullets */
+::ng-deep .swiper-pagination-bullet {
+  background: var(--color-golden-bronze-500);
+  opacity: 0.5;
+  width: 12px;
+  height: 12px;
+}
+
+::ng-deep .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--color-golden-bronze-500);
+}
+
+/* Navigation buttons */
+::ng-deep .swiper-button-next,
+::ng-deep .swiper-button-prev {
+  color: var(--color-golden-bronze-500);
+  background: rgba(210, 155, 45, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .swiper-button-next:hover,
+::ng-deep .swiper-button-prev:hover {
+  background: rgba(210, 155, 45, 0.2);
+  transform: scale(1.1);
+}
+
+::ng-deep .swiper-button-next::after,
+::ng-deep .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: bold;
+}

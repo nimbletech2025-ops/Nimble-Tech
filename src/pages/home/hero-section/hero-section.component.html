@@ -1,0 +1,64 @@
+<section class="relative w-full h-[80vh] sm:h-screen overflow-visible">
+  <swiper-container
+    class="w-full h-full"
+    slides-per-view="1"
+    pagination="false"
+    pagination-clickable="false"
+    navigation="false"
+    centered-slides="true"
+    autoplay-delay="5000"
+    autoplay-disable-on-interaction="false"
+    effect="fade"
+    speed="1200"
+  >
+    @for (image of heroImages; track image.src) {
+    <swiper-slide class="relative w-full h-full min-h-full flex flex-col">
+      <!-- Background Image -->
+      <div class="absolute inset-0 w-full h-full flex items-center justify-center overflow-hidden">
+        @if (screenWidth() > 768) {
+        <!-- Desktop Image -->
+        <img
+          [src]="image.src"
+          [alt]="image.alt"
+          loading="lazy"
+          class="hidden sm:block w-full h-full object-fill rounded-xl"
+        />
+        } @else {
+        <!-- Mobile Image -->
+        <img
+          [src]="image.mobileSrc || image.src"
+          [alt]="image.alt"
+          loading="lazy"
+          class="block sm:hidden w-full h-full object-fill rounded-xl"
+        />
+        }
+        <!-- Overlay -->
+        <!-- <div
+          class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none"
+        ></div> -->
+      </div>
+
+      <!-- Content - Buttons at Top Center -->
+      <div class="absolute inset-0 z-10 flex items-center justify-center">
+        <div class="flex justify-center items-start pt-8 sm:pt-12 md:pt-16 px-4">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#contact"
+              class="px-6 py-3 rounded-lg bg-[var(--color-golden-bronze-500)] text-[var(--color-prussian-blue-900)] font-semibold hover:opacity-90 transition text-center whitespace-nowrap"
+            >
+              Get in Touch
+            </a>
+
+            <a
+              href="#services"
+              class="px-6 py-3 rounded-lg border-2 border-white/80 text-white hover:bg-white/20 transition text-center whitespace-nowrap backdrop-blur-sm"
+            >
+              Our Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+    }
+  </swiper-container>
+</section>
