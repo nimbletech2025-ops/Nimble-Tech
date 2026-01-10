@@ -1,3 +1,129 @@
-<p>
-  footer works!
-</p>
+<footer class="w-full py-3 px-3 sm:px-4 md:px-6 lg:px-8">
+  <div
+    class="max-w-7xl mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-[var(--color-prussian-blue-900)] via-[var(--color-prussian-blue-800)] to-[var(--color-prussian-blue-900)] border border-[var(--color-golden-bronze-500)] shadow-2xl"
+  >
+    <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-0">
+      <!-- Left Section: Contact Form -->
+      <div class="p-3 sm:p-4 md:p-5 lg:p-6">
+        <h2
+          class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 pb-2 border-b border-[var(--color-golden-bronze-500)]"
+        >
+          Get in Touch
+        </h2>
+
+        <form (ngSubmit)="submit()" #f="ngForm" class="space-y-3">
+          <!-- Name -->
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            [(ngModel)]="contactForm.name"
+            required
+            class="w-full bg-transparent border-b border-[var(--color-sky-blue-light-300)] text-white py-2"
+          />
+
+          <!-- Email -->
+          <input
+            type="email"
+            name="email"
+            placeholder="Business Email"
+            [(ngModel)]="contactForm.email"
+            required
+            class="w-full bg-transparent border-b border-[var(--color-sky-blue-light-300)] text-white py-2"
+          />
+
+          <!-- Mobile -->
+          <input
+            type="tel"
+            name="mobile"
+            placeholder="Mobile Number"
+            [(ngModel)]="contactForm.mobile"
+            class="w-full bg-transparent border-b border-[var(--color-sky-blue-light-300)] text-white py-2"
+          />
+
+          <!-- Message -->
+          <textarea
+            name="message"
+            placeholder="Message"
+            rows="3"
+            required
+            [(ngModel)]="contactForm.message"
+            class="w-full bg-transparent border-b border-[var(--color-sky-blue-light-300)] text-white py-2 resize-none"
+          ></textarea>
+
+          <button
+            type="submit"
+            [disabled]="messageConfig.isSending"
+            [class.opacity-50]="messageConfig.isSending"
+            [class.cursor-not-allowed]="messageConfig.isSending"
+            class="mt-3 py-2 cursor-pointer px-4 border border-[var(--color-golden-bronze-500)] bg-[var(--color-prussian-blue-800)] text-white hover:bg-[var(--color-golden-bronze-500)] transition-all rounded-lg text-sm"
+          >
+            {{ messageConfig.isSending ? 'SENDING...' : 'SEND MESSAGE' }}
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Section: Map -->
+      <div class="relative bg-[var(--color-prussian-blue-950)] p-3 sm:p-4 md:p-5 lg:p-6">
+        <div
+          class="relative w-full h-full min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] rounded-lg overflow-hidden"
+        >
+          <!-- Google Maps Embed -->
+          <iframe
+            [src]="mapUrl"
+            width="100%"
+            height="100%"
+            style="border: 0; filter: grayscale(100%) invert(90%) contrast(120%)"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="absolute inset-0 w-full h-full"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  @if (messageConfig.showModal) {
+  <div
+    class="fixed top-4 right-4 sm:top-6 sm:left-8 z-[9999] max-w-sm w-full rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ease-out border"
+    [style.background-color]="
+      messageConfig.modalType === 'success' ? 'var(--color-prussian-blue-800)' : '#991b1b'
+    "
+    [style.border-color]="
+      messageConfig.modalType === 'success' ? 'var(--color-golden-bronze-500)' : '#dc2626'
+    "
+    role="alert"
+    aria-live="assertive"
+  >
+    <div class="flex items-start gap-3 p-4 text-white">
+      <!-- Icon -->
+      <span class="mt-0.5 shrink-0">
+        @if (messageConfig.modalType == 'success') {
+        <i-lucide
+          [img]="icon.checkCircle"
+          class="w-5 h-5 text-[var(--color-golden-bronze-400)]"
+        ></i-lucide>
+        } @else {
+        <i-lucide [img]="icon.xCircle" class="w-5 h-5 text-red-400"></i-lucide>
+        }
+      </span>
+
+      <!-- Message -->
+      <p class="text-sm flex-1 leading-relaxed">
+        {{ messageConfig.modalMessage }}
+      </p>
+
+      <!-- Close -->
+      <button
+        class="text-white/70 hover:text-white transition-colors shrink-0 cursor-pointer"
+        (click)="messageConfig.showModal = false"
+        aria-label="Close notification"
+      >
+        <i-lucide [img]="icon.x" class="w-4 h-4"></i-lucide>
+      </button>
+    </div>
+  </div>
+  }
+</footer>

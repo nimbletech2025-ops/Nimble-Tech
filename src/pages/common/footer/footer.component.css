@@ -1,0 +1,14 @@
+footer input::placeholder,
+footer textarea::placeholder {
+  color: rgba(207, 242, 252, 0.5);
+}
+
+footer input:focus,
+footer textarea:focus {
+  border-bottom-color: var(--color-golden-bronze-500);
+}
+
+/* Smooth scroll behavior */
+footer {
+  scroll-margin-top: 2rem;
+}
