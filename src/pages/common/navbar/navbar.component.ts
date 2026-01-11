@@ -67,17 +67,17 @@ export class NavbarComponent implements OnInit {
     {
       name: 'Facebook',
       icon: Facebook,
-      url: 'https://facebook.com',
+      url: 'https://www.facebook.com/profile.php?id=61586092841748',
     },
     {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://instagram.com',
+      url: 'https://www.instagram.com/nimbletech2025/',
     },
     {
       name: 'Email',
       icon: Mail,
-      url: 'mailto:contact@nimbletech.com',
+      url: 'mailto:contat@nimble-tech.solutions',
     },
   ];
 

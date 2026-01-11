@@ -1,0 +1,59 @@
+<section class="w-full my-2 sm:my-6 lg:my-10 bg-prussian-blue-950 rounded-xl">
+  <div class="max-w-7xl mx-auto px-4 sm:px-24 lg:px-32 py-2">
+    <!-- Section Header -->
+    <div class="text-center pt-4 pb-6">
+      <p class="text-base sm:text-lg mb-4 font-normal text-golden-bronze-300">
+        Frameworks That Power Our Solutions
+      </p>
+
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 uppercase tracking-wider">
+        SOFTWARE FRAMEWORKS
+      </h2>
+
+      <p
+        class="text-sm sm:text-base text-sky-blue-light-500 max-w-2xl mx-auto font-normal leading-relaxed"
+      >
+        Angular, React, Django, Firebase, Supabase, and enterprise-grade databases form the
+        foundation of our software solutions.
+      </p>
+    </div>
+
+    <!-- Software Products Grid -->
+    <swiper-container
+      class="software-swiper py-4"
+      slides-per-view="2"
+      space-between="30"
+      autoplay='{"delay": 3000, "disableOnInteraction": false}'
+      grid='{"rows": 2, "fill": "row"}'
+      pagination='{"clickable": true, "dynamicBullets": true}'
+      breakpoints='{"640": {"slidesPerView": 2, "spaceBetween": 20}, "768": {"slidesPerView": 4, "spaceBetween": 20}}'
+    >
+      @for (software of softwares; track software.id) {
+      <swiper-slide>
+        <div
+          class="software-card h-full flex flex-col cursor-pointer transition-all duration-300 hover:scale-105 rounded-xl overflow-hidden"
+        >
+          <!-- Software Image Panel -->
+          <div
+            class="relative w-full flex-1 min-h-[200px] sm:min-h-[250px] md:min-h-[300px] overflow-hidden"
+          >
+            <img
+              [src]="software.image"
+              [alt]="software.category"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-xl"
+            />
+
+            <!-- Category Label Overlay -->
+            <div class="absolute bottom-0 left-0 right-0 py-3 sm:py-4 text-center rounded-b-xl">
+              <span class="text-white font-bold text-xs md:text-sm uppercase tracking-wider">
+                {{ software.category }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+</section>

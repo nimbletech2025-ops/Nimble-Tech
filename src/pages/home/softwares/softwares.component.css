@@ -1,0 +1,43 @@
+/* Software Swiper Customization */
+.software-swiper {
+  --swiper-pagination-color: var(--color-golden-bronze-500);
+  --swiper-navigation-color: var(--color-golden-bronze-500);
+  --swiper-navigation-size: 24px;
+}
+
+swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Software Card Styles */
+.software-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.software-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Pagination bullets */
+::ng-deep .swiper-pagination-bullet {
+  background: var(--color-golden-bronze-500);
+  opacity: 0.5;
+  width: 12px;
+  height: 12px;
+}
+
+::ng-deep .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--color-golden-bronze-500);
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .software-swiper {
+    padding: 1rem 0 3rem 0;
+  }
+}
