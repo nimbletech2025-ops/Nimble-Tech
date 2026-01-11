@@ -1,0 +1,84 @@
+<section class="w-full md:py-10 mt-8 sm:mt-0 rounded-xl">
+  <div class="max-w-7xl mx-auto px-4 py-2">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <!-- Left Side: Description and Title -->
+      <div class="space-y-6">
+        <p
+          class="text-base sm:text-lg font-normal -mt-4"
+          style="color: var(--color-golden-bronze-600)"
+        >
+          About Nimble Tech
+        </p>
+
+        <h2
+          class="text-3xl sm:text-4xl font-bold uppercase tracking-wider"
+          style="color: var(--color-prussian-blue-900)"
+        >
+          Innovation Meets Excellence
+        </h2>
+
+        <p class="text-sm sm:text-base text-gray-700 leading-relaxed text-justify md:text-left">
+          At Nimble Tech, we focus on delivering modern technology solutions designed to support
+          growth, efficiency, and innovation in a rapidly evolving digital landscape. Our work is
+          guided by a clear understanding of client requirements, careful planning, and the
+          application of practical, well-structured technical solutions that address real-world
+          challenges.
+        </p>
+
+        <p class="text-sm sm:text-base text-gray-600 leading-relaxed text-justify md:text-left">
+          Our team collaborates closely across development, engineering, and design to build systems
+          that are scalable, secure, and easy to use. We prioritize clean architecture, performance,
+          and maintainability, ensuring that every solution we create is reliable today and
+          adaptable for future needs. By focusing on clarity, consistency, and long-term value, we
+          aim to form trusted partnerships and deliver technology that truly makes a difference.
+        </p>
+      </div>
+
+      <!-- Right Side: Points/Features -->
+      <div class="space-y-6">
+        <h3
+          class="text-3xl sm:text-4xl font-bold mb-6 uppercase tracking-wider"
+          style="color: var(--color-prussian-blue-800)"
+        >
+          Why Choose Us
+        </h3>
+
+        <ul class="space-y-4">
+          @for (feature of features; track feature) {
+          <li class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-1"
+              style="background: var(--color-golden-bronze-500)"
+            >
+              <i-lucide
+                [img]="icon.check"
+                class="w-4 h-4"
+                style="color: var(--color-prussian-blue-900)"
+              ></i-lucide>
+            </div>
+            <p
+              class="text-sm sm:text-base leading-relaxed flex-1"
+              style="color: var(--color-prussian-blue-700)"
+            >
+              {{ feature }}
+            </p>
+          </li>
+          }
+        </ul>
+
+        <div class="mt-8 p-6 rounded-xl" style="background: var(--color-sky-blue-light-50)">
+          <p
+            class="text-sm sm:text-base font-medium mb-2"
+            style="color: var(--color-prussian-blue-800)"
+          >
+            Ready to get started?
+          </p>
+          <p class="text-xs sm:text-sm" style="color: var(--color-prussian-blue-600)">
+            Contact us today to discuss how we can help transform your business with our innovative
+            technology solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

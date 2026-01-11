@@ -1,0 +1,12 @@
+/* About Section Styles */
+section {
+  background: linear-gradient(to bottom, var(--color-sky-blue-light-50), transparent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}

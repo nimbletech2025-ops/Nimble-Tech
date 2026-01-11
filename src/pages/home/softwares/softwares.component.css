@@ -14,11 +14,13 @@ swiper-slide {
 /* Software Card Styles */
 .software-card {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 .software-card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   z-index: 10;
+  border-color: var(--color-golden-bronze-500);
 }
 
 /* Pagination bullets */
