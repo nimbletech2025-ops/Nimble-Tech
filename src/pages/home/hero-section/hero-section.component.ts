@@ -1,4 +1,5 @@
 import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, HostListener, signal } from '@angular/core';
+import { Router } from '@angular/router';
 import { register } from 'swiper/element/bundle';
 
 register();
@@ -10,6 +11,7 @@ register();
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HeroSectionComponent implements OnInit {
+  constructor(private router: Router) {}
   heroImages = [
     {
       src: 'hardware.png',
@@ -40,5 +42,23 @@ export class HeroSectionComponent implements OnInit {
 
   ngOnInit() {
     this.screenWidth.set(window.innerWidth);
+  }
+
+  navigateToFragment(fragment: string) {
+    this.router.navigate(['/'], { fragment: fragment }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(fragment);
+        if (element) {
+          const offset = 100; // Offset for fixed navbar at bottom
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+        }
+      }, 100);
+    });
   }
 }

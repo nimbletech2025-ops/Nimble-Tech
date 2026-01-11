@@ -9,7 +9,9 @@ import {
   Instagram,
   MonitorCloud,
 } from 'lucide-angular';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -29,9 +31,19 @@ export class NavbarComponent implements OnInit {
     work: MonitorCloud,
   };
   currentPath: string = '';
-  constructor(private router: Router) {}
+  constructor(private router: Router, private viewportScroller: ViewportScroller) {
+    // Handle fragment navigation on route changes
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
+      const fragment = this.router.parseUrl(this.router.url).fragment;
+      if (fragment) {
+        setTimeout(() => {
+          this.scrollToFragment(fragment);
+        }, 100);
+      }
+    });
+  }
 
-  tabs: { name: string; icon: any; path: string }[] = [
+  tabs: { name: string; icon: any; path: string; fragment?: string }[] = [
     {
       name: 'Home',
       icon: Home,
@@ -40,27 +52,55 @@ export class NavbarComponent implements OnInit {
     {
       name: 'About',
       icon: Info,
-      path: '/about',
+      path: '/',
+      fragment: 'about',
     },
     {
       name: 'Services',
       icon: Briefcase,
-      path: '/services',
+      path: '/',
+      fragment: 'services',
     },
     {
       name: 'Contact',
       icon: Mail,
-      path: '/contact',
+      path: '/',
+      fragment: 'contact',
     },
     {
-      name: 'Work',
+      name: 'Projects',
       icon: MonitorCloud,
-      path: '/work',
+      path: '/',
+      fragment: 'Projects',
     },
   ];
 
-  navigateTo(path: string) {
-    this.router.navigate([path]);
+  navigateTo(path: string, fragment?: string) {
+    if (fragment) {
+      this.router.navigate([path], { fragment: fragment }).then(() => {
+        this.scrollToFragment(fragment);
+      });
+    } else {
+      this.router.navigate([path]).then(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  }
+
+  scrollToFragment(fragment: string) {
+    setTimeout(() => {
+      const element = document.getElementById(fragment);
+      if (element) {
+        const offset = 100; // Offset for fixed navbar at bottom
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+    }, 100);
   }
 
   socialLinks: { name: string; icon: any; url: string }[] = [

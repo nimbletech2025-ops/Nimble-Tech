@@ -20,7 +20,9 @@
         <img
           [src]="image.src"
           [alt]="image.alt"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
           class="hidden sm:block w-full h-full object-fill rounded-xl"
         />
         } @else {
@@ -28,7 +30,9 @@
         <img
           [src]="image.mobileSrc || image.src"
           [alt]="image.alt"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
           class="block sm:hidden w-full h-full object-fill rounded-xl"
         />
         }
@@ -72,15 +76,15 @@
         >
           <div class="flex flex-col sm:flex-row gap-4">
             <a
-              href="#contact"
-              class="px-6 py-3 rounded-lg bg-[var(--color-golden-bronze-500)] text-[var(--color-prussian-blue-900)] font-semibold hover:opacity-90 transition text-center whitespace-nowrap"
+              (click)="navigateToFragment('contact')"
+              class="px-6 py-3 rounded-lg bg-[var(--color-golden-bronze-500)] text-[var(--color-prussian-blue-900)] font-semibold hover:opacity-90 transition text-center whitespace-nowrap cursor-pointer"
             >
               Get in Touch
             </a>
 
             <a
-              href="#services"
-              class="px-6 py-3 rounded-lg border-2 border-white/80 text-white hover:bg-white/20 transition text-center whitespace-nowrap backdrop-blur-sm"
+              (click)="navigateToFragment('services')"
+              class="px-6 py-3 rounded-lg border-2 border-white/80 text-white hover:bg-white/20 transition text-center whitespace-nowrap backdrop-blur-sm cursor-pointer"
             >
               Our Services
             </a>
