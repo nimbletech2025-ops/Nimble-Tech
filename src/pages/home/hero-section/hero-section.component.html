@@ -32,15 +32,44 @@
           class="block sm:hidden w-full h-full object-fill rounded-xl"
         />
         }
-        <!-- Overlay -->
-        <!-- <div
-          class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none"
-        ></div> -->
+      </div>
+
+      <!-- Title and Description at Top Left -->
+      <div class="absolute top-6 sm:top-8 md:top-12 left-4 sm:left-8 md:left-12 z-10 max-w-2xl">
+        <h1
+          class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg"
+        >
+          {{ image.title }}
+        </h1>
+        <p
+          class="text-sm sm:text-base md:text-lg text-white/90 max-w-md drop-shadow-md leading-relaxed"
+        >
+          {{ image.description }}
+        </p>
+      </div>
+
+      <!-- Categories at Bottom -->
+      <div
+        class="absolute bottom-0 left-4 sm:left-8 md:left-12 right-4 sm:right-8 md:right-12 z-10"
+      >
+        <div class="bg-black/20 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-lg">
+          <div
+            class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-white text-xs sm:text-sm md:text-base"
+          >
+            @for (category of image.categories; track category; let isLast = $last) {
+            <span class="font-medium">{{ category }}</span>
+            @if (!isLast) {
+            <span class="text-white/60">|</span>
+            } }
+          </div>
+        </div>
       </div>
 
       <!-- Content - Buttons at Top Center -->
-      <div class="absolute inset-0 z-10 flex items-center justify-center">
-        <div class="flex justify-center items-start pt-8 sm:pt-12 md:pt-16 px-4">
+      <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+        <div
+          class="flex justify-center items-start pt-8 sm:pt-12 md:pt-16 px-4 pointer-events-auto"
+        >
           <div class="flex flex-col sm:flex-row gap-4">
             <a
               href="#contact"

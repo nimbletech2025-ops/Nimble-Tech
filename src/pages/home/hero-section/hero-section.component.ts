@@ -15,11 +15,19 @@ export class HeroSectionComponent implements OnInit {
       src: 'hardware.png',
       mobileSrc: 'hardware-mobile.png', // Mobile version
       alt: 'Technology Hero 1',
+      title: 'Hardware Solutions',
+      description:
+        'High-performance computer components and hardware designed for reliability and modern computing needs.',
+      categories: ['Processors', 'Graphics Cards', 'Motherboards', 'Storage', 'Memory'],
     },
     {
       src: 'software.png',
       mobileSrc: 'software-mobile.png', // Mobile version
       alt: 'Technology Hero 2',
+      title: 'Software Solutions',
+      description:
+        'Innovative software applications and digital solutions to power your business and enhance productivity.',
+      categories: ['Web Development', 'Mobile Apps', 'Cloud Services', 'Enterprise Software'],
     },
   ];
 

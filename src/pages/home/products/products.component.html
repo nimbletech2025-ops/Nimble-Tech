@@ -35,7 +35,7 @@
       @for (product of products; track product.id) {
       <swiper-slide>
         <div
-          class="product-card h-full flex flex-col bg-sky-blue-light-500/80 cursor-pointer transition-all duration-300 hover:scale-105 rounded-xl overflow-hidden"
+          class="product-card h-full flex flex-col cursor-pointer transition-all duration-300 hover:scale-105 rounded-xl overflow-hidden"
         >
           <!-- Product Image Panel -->
           <div
@@ -50,7 +50,7 @@
 
             <!-- Category Label Overlay -->
             <div
-              class="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm py-3 sm:py-4 text-center rounded-b-xl"
+              class="absolute bottom-0 left-0 right-0 bg-black/20 backdrop-blur-sm py-3 sm:py-4 text-center rounded-b-xl"
             >
               <span class="text-white font-bold text-base md:text-md uppercase tracking-wider">
                 {{ product.category }}
