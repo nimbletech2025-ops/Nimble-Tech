@@ -1,0 +1,7 @@
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
