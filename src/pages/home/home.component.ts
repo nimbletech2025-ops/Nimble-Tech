@@ -4,6 +4,7 @@ import { ProductsComponent } from './products/products.component';
 import { SoftwaresComponent } from './softwares/softwares.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
+import { ProjectsComponent } from './projects/projects.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,6 +15,7 @@ import { ServicesComponent } from './services/services.component';
     SoftwaresComponent,
     AboutComponent,
     ServicesComponent,
+    ProjectsComponent,
   ],
 })
 export class HomeComponent implements OnInit {

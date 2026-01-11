@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { MainComponent } from '../pages/main/main.component';
-import { HomeComponent } from '../pages/home/home.component';
+
 export const routes: Routes = [
   {
     path: '',
@@ -8,8 +8,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeComponent,
-        pathMatch: 'full',
+        loadComponent: () => import('../pages/home/home.component').then((m) => m.HomeComponent),
       },
     ],
   },
