@@ -24,7 +24,7 @@
     <!-- Products Swiper -->
     <swiper-container
       class="products-swiper"
-      slides-per-view="1"
+      slides-per-view="2"
       space-between="20"
       loop="true"
       navigation="false"
@@ -35,7 +35,7 @@
       @for (product of products; track product.id) {
       <swiper-slide>
         <div
-          class="product-card h-full flex flex-col bg-sky-blue-light-500/80 cursor-pointer transition-all duration-300 hover:scale-105 rounded-xl"
+          class="product-card h-full flex flex-col bg-sky-blue-light-500/80 cursor-pointer transition-all duration-300 hover:scale-105 rounded-xl overflow-hidden"
         >
           <!-- Product Image Panel -->
           <div
@@ -47,13 +47,15 @@
               loading="lazy"
               class="w-full h-full object-cover rounded-xl"
             />
-          </div>
 
-          <!-- Category Label -->
-          <div class="w-full py-3 sm:py-4 text-center rounded-b-xl">
-            <span class="text-black/80 font-bold text-base md:text-md uppercase tracking-wider">
-              {{ product.category }}
-            </span>
+            <!-- Category Label Overlay -->
+            <div
+              class="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm py-3 sm:py-4 text-center rounded-b-xl"
+            >
+              <span class="text-white font-bold text-base md:text-md uppercase tracking-wider">
+                {{ product.category }}
+              </span>
+            </div>
           </div>
         </div>
       </swiper-slide>
